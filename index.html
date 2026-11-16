@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Huzaifa's HTML, CSS and JavaScript tasks collection - WMA Batch 12.">
+
+    <title>My All Task</title>
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+    <!-- Theme ko page load se pehle set karta hai (flash se bachne ke liye) -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add("js");
+            var theme = "light";
+            try {
+                var saved = JSON.parse(localStorage.getItem("theme"));
+                if (saved === "dark" || saved === "light") {
+                    theme = saved;
+                } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    theme = "dark";
+                }
+            } catch (e) { }
+            root.dataset.theme = theme;
+        })();
+    </script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+
+    <nav>
+        <a class="logo" href="#top">
+            <img src="./assets/icons/favicon.png" alt="Logo" width="36" height="36">
+            <span class="logo-name">Huzaifa</span>
+        </a>
+
+        <ul>
+            <li><a class="nav-html" href="#html">HTML</a></li>
+            <li><a class="nav-css" href="#css">CSS</a></li>
+            <li><a class="nav-javascript" href="#javascript">JavaScript</a></li>
+            <li><a class="nav-github" href="#github">GitHub</a></li>
+        </ul>
+
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+
+
+    <!-- Introduction -->
+
+    <header class="intro reveal" id="top">
+
+        <img class="avatar" src="./assets/hero-imge/huzaifa.png" alt="Huzaifa" width="96" height="96">
+
+        <div>
+            <h1>My All Task</h1>
+            <p class="name">Huzaifa</p>
+            <p class="typing" aria-live="off"><span id="typed"></span><span class="cursor" aria-hidden="true">|</span></p>
+
+            <p class="chips">
+                <span>Roll No: 888990</span>
+                <span>WMA Batch 12</span>
+            </p>
+        </div>
+
+    </header>
+
+
+    <!-- Stats -->
+
+    <section class="stats reveal" id="stats" aria-label="Tasks summary">
+        <div class="stat"><strong data-stat="total">0</strong><span>Total Tasks</span></div>
+        <div class="stat"><strong data-stat="html">0</strong><span>HTML</span></div>
+        <div class="stat"><strong data-stat="css">0</strong><span>CSS</span></div>
+        <div class="stat"><strong data-stat="javascript">0</strong><span>JavaScript</span></div>
+    </section>
+
+
+    <!-- Search + Progress -->
+
+    <section class="toolbar reveal" aria-label="Search and progress">
+
+        <div class="search-wrap">
+            <input id="search" type="text" inputmode="search" autocomplete="off"
+                placeholder="Search tasks...  (press / to focus)" aria-label="Search tasks">
+            <button id="clearSearch" class="clear-btn" type="button" aria-label="Clear search" hidden>✕</button>
+        </div>
+
+        <div class="visited">
+            <div class="visited-bar" id="visitedBar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                aria-valuenow="0" aria-label="Opened tasks">
+                <span id="visitedFill"></span>
+            </div>
+            <div class="visited-row">
+                <p id="visitedText">Opened 0 of 0 tasks</p>
+                <button id="resetVisited" class="link-btn" type="button">Reset</button>
+            </div>
+        </div>
+
+    </section>
+
+    <p class="no-results" id="noResults" hidden>😕 Koi task nahi mila. Dusra word try karo.</p>
+
+
+    <!-- HTML Tasks -->
+
+    <div class="html reveal" id="html" data-tasks data-track>
+
+        <h2>HTML Tasks <span class="badge" data-badge></span></h2>
+
+        <ul>
+            <li><a href="./html/html task 1/index.html">HTML Task 1</a></li>
+            <li><a href="./html/html task 2/index.html">HTML Task 2</a></li>
+            <li><a href="./html/html task 3/index.html">HTML Task 3</a></li>
+            <li><a href="./html/Htmltask 4/index.html">HTML Task 4</a></li>
+            <li><a href="./html/html task 5/index.html">HTML Task 5</a></li>
+            <li><a href="./html/html task 6/index.html">HTML Task 6</a></li>
+            <li><a href="./html/html task 7/index.html">HTML Task 7</a></li>
+            <li><a href="./html/html final task/index.html">HTML Task 8</a></li>
+            <li><a href="./html/html hackethon/index.html">HTML Hackathon</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- CSS Tasks -->
+
+    <div class="css reveal" id="css" data-tasks data-track>
+
+        <h2>CSS Tasks <span class="badge" data-badge></span></h2>
+
+        <ul>
+            <li><a href="./css/css 1st task/index.html">CSS Task 1</a></li>
+            <li><a href="./css/css task 2/index.html">CSS Task 2</a></li>
+            <li><a href="./css/css task 3/index.html">CSS Task 3</a></li>
+            <li><a href="./css/css task 4/index.html">CSS Task 4</a></li>
+            <li><a href="./css/css task 5/index.html">CSS Task 5</a></li>
+            <li><a href="./css/css task 6/index.html">CSS Task 6</a></li>
+            <li><a href="./css/css task 7/index.html">CSS Task 7</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- JavaScript Practice -->
+
+    <div class="javascript reveal" id="javascript" data-tasks data-track>
+
+        <h2>JavaScript Practice <span class="badge" data-badge></span></h2>
+
+        <ul>
+            <li><a href="./js-pratice/01-first-learning-lab/index.html">JavaScript Practice 1</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- GitHub Repository -->
+
+    <div class="github reveal" id="github" data-tasks>
+
+        <h2>GitHub Repository</h2>
+
+        <ul>
+            <li>
+                <a href="https://github.com/code-huzaifa349/html-css-all-tasks.git" target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub Repository ↗
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© <span id="year"></span> Huzaifa · WMA Batch 12</p>
+    </footer>
+
+
+    <!-- Back to Top Button -->
+
+    <button class="top-btn" id="topBtn" type="button" aria-label="Back to top">↑ Top</button>
+
+
+    <!-- JavaScript File -->
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
